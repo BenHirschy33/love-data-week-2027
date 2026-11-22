@@ -9,17 +9,19 @@ Purdue University **Boiler Up, Hammer Data Challenge** (Love Data Week 2027) pro
 ## Directory Structure
 
 ```text
+├── .github/        # CI workflows, PR template, and issue templates
 ├── app/            # Publicly hosted interactive visualization / web app
 ├── data/
 │   ├── raw/        # Official Box dataset (gitignored; stored locally or in Colab/Drive)
 │   └── processed/  # Cleaned/aggregated outputs used by the app
-├── docs/           # Project notes, methodology, and showcase materials
+├── docs/           # Competition docs, methodology, and showcase materials
 ├── notebooks/      # Exploratory analysis & prototyping notebooks (local or Colab)
-└── src/            # Reusable data loading, feature engineering, and modeling modules
+├── src/            # Reusable data loading, feature engineering, and modeling modules
+└── ruff.toml       # Python lint & formatting configuration
 ```
 
-## Dataset
+## Development Workflow
 
-Official NCAA Women's Basketball dataset (via Purdue IDA+A / BTAA):
-- Download from the Box link provided in the challenge announcement and place files in `data/raw/`.
-- Raw data is intentionally excluded from git via `.gitignore`.
+- Work on feature branches and merge into `main` via Pull Request (never commit directly to `main`).
+- GitHub Actions CI ([ci.yml](.github/workflows/ci.yml)) checks repository hygiene, `ruff` lint/formatting, and `pytest` on every PR.
+- Raw datasets belong in `data/raw/` locally (or Google Drive/Colab) and are excluded from git via `.gitignore`.
