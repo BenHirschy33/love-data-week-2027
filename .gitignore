@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment & Secrets
+.env
+.env*.local
+
+# Raw & Large Data (keep raw Box dataset local, not in git)
+data/raw/*
+!data/raw/.gitkeep
+*.parquet
+*.zip
+*.tar.gz
+
+# OS / Editor
+.DS_Store
+Thumbs.db
