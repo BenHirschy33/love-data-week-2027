@@ -1,0 +1,25 @@
+[project]
+name = "love-data-week-2027"
+version = "0.1.0"
+description = "Purdue Boiler Up, Hammer Data Challenge & BTAA Data Viz Championship (Love Data Week 2027)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb>=1.1.0",
+    "pandas>=2.2.0",
+    "polars>=1.0.0",
+    "pyarrow>=17.0.0",
+    "scikit-learn>=1.5.0",
+    "plotly>=5.24.0",
+    "streamlit>=1.39.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "jupyter>=1.1.0",
+    "ipykernel>=6.29.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
