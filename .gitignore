@@ -1,27 +1,91 @@
-# Python
+# ==============================================================================
+# Python & Packaging
+# ==============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 .venv/
 venv/
-*.egg-info/
-dist/
-build/
+ENV/
+env/
+.uv/
 
-# Jupyter
+# ==============================================================================
+# Jupyter / Notebooks
+# ==============================================================================
 .ipynb_checkpoints/
+*.ipynb_checkpoints
 
-# Environment & Secrets
+# ==============================================================================
+# Environment & Secrets (NEVER commit secrets or local env files)
+# ==============================================================================
 .env
-.env*.local
+.env.*
+!.env.example
 
-# Raw & Large Data (keep raw Box dataset local, not in git)
+# ==============================================================================
+# Data (keep raw/large datasets local or in cloud storage, never in git)
+# ==============================================================================
 data/raw/*
 !data/raw/.gitkeep
+*.csv
+*.tsv
 *.parquet
+*.feather
+*.arrow
+*.duckdb
+*.sqlite
+*.db
 *.zip
+*.tar
 *.tar.gz
+*.tgz
+*.7z
+!data/processed/*.json
+!data/processed/.gitkeep
 
-# OS / Editor
+# ==============================================================================
+# BI / Visualization Tool Temp Files
+# ==============================================================================
+*.twb~
+*.twbx
+*.pbix
+*.tmp
+
+# ==============================================================================
+# Node / Frontend (if app/ uses Vite, Next.js, or D3/React)
+# ==============================================================================
+node_modules/
+app/dist/
+app/build/
+.next/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ==============================================================================
+# OS / IDE / Logs
+# ==============================================================================
 .DS_Store
 Thumbs.db
+*.log
+.vscode/
+.idea/
