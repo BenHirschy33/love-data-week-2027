@@ -15,6 +15,7 @@ Purdue University **Boiler Up, Hammer Data Challenge** (Love Data Week 2027) pro
 │   ├── raw/        # Official Box dataset (gitignored; stored locally or in Colab/Drive)
 │   └── processed/  # Cleaned/aggregated outputs used by the app
 ├── docs/           # Competition docs, methodology, and showcase materials
+│   └── COMPETITION_GUIDE.md  # Live-linked guide across Purdue & BTAA stages
 ├── notebooks/      # Exploratory analysis & prototyping notebooks (local or Colab)
 ├── src/            # Reusable data loading, feature engineering, and modeling modules
 └── ruff.toml       # Python lint & formatting configuration
