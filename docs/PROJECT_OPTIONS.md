@@ -36,7 +36,7 @@ Inspected all 5 compact `.parquet` tables from the official Box dataset (`NCAA W
 
 ---
 
-## 2. Final Shortlist (Top 3 Options to Re-Evaluate After Break)
+## 2. Final Shortlist (4 Options to Re-Evaluate After Break)
 
 ### Option 1 (Primary Candidate): Ranking Audit -> New Hybrid Team Rating System
 - **Core Question:** *How accurate are human rankings (AP Top-25, NCAA Seeds) vs. objective efficiency ratings—where are their blind spots, and can a new rating combining SOS-adjusted efficiency with `game_box` player consistency outperform them?*
@@ -55,10 +55,14 @@ Inspected all 5 compact `.parquet` tables from the official Box dataset (`NCAA W
 - **Core Question:** *Rather than assuming balanced scoring is always better, when does relying on a high-usage star help (e.g., underdog upset ceiling) vs. break down in March?*
 - **Initial Signal Observed:** In 2017–2026 March Madness (`1,174` team-games), teams with `top1_share >= 35%` won `38.2%` vs. `66.1%` when `< 25%`, while bench share dropped from `26.3%` (regular season) to `19.9%` (March)—requiring a pre-game season-average test to control for trailing-team bias.
 
+### Option 4 (Personal Interest / Pure Prediction): Pure Matchup & Game-Outcome Simulator (2017–2026)
+- **Core Question:** *Using all available pre-game box-score, schedule, and roster signals, how accurately can an ML model predict individual game winners and expected point margins?*
+- **Why Keep as Option 4:** Directly aligns with personal interest in predicting game outcomes and building a reusable SportsDataverse forecasting engine (`wehoop`/`hoopR`), though it ranks #4 for Love Data Week because a pure predictor needs strong visual storytelling around *why* predictions happen to score well on the BTAA Data Viz rubric.
+
 ---
 
 ## 3. Pickup Plan After Break
 
-1. Confirm Option 1 (or pivot to Option 2/3) before writing modeling code.
+1. Confirm Option 1 (or pivot to Option 2/3/4) before writing modeling code.
 2. Start directly on **Layer 1** in `src/` + `notebooks/`: build the clean `2017–2026` game/box-score loader and run the 2024–2026 AP Poll & NCAA Seed accuracy audit.
 3. Move to **Layer 2** (hybrid rating + out-of-sample validation), export precomputed JSONs to `data/processed/`, and build the static interactive visualization in `app/` for **GitHub Pages** ahead of **December 11**.
