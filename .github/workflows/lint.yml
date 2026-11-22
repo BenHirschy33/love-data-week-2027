@@ -1,4 +1,4 @@
-name: CI
+name: Lint
 
 on:
   pull_request:
@@ -7,7 +7,8 @@ on:
     branches: ["main"]
 
 jobs:
-  lint-and-test:
+  lint:
+    name: lint
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -27,12 +28,3 @@ jobs:
         run: |
           uvx ruff check .
           uvx ruff format --check .
-
-      - name: Run tests (when tests/ exists)
-        run: |
-          if [ -d tests ]; then
-            uv sync --dev
-            uv run pytest
-          else
-            echo "No tests/ directory yet; skipping pytest."
-          fi

@@ -1,0 +1,27 @@
+name: Test
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Run pytest (when tests/ exists)
+        run: |
+          if [ -d tests ]; then
+            uv sync --dev
+            uv run pytest
+          else
+            echo "No tests/ directory yet; skipping pytest."
+          fi

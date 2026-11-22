@@ -23,5 +23,5 @@ Purdue University **Boiler Up, Hammer Data Challenge** (Love Data Week 2027) pro
 ## Development Workflow
 
 - Work on feature branches and merge into `main` via Pull Request (never commit directly to `main`).
-- GitHub Actions CI ([ci.yml](.github/workflows/ci.yml)) checks repository hygiene, `ruff` lint/formatting, and `pytest` on every PR.
+- GitHub Actions runs separate **Lint** ([lint.yml](.github/workflows/lint.yml)) and **Test** ([test.yml](.github/workflows/test.yml)) workflows on every PR.
 - Raw datasets belong in `data/raw/` locally (or Google Drive/Colab) and are excluded from git via `.gitignore`.
