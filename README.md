@@ -18,8 +18,21 @@ Purdue University **Boiler Up, Hammer Data Challenge** (Love Data Week 2027) pro
 │   └── COMPETITION_GUIDE.md  # Live-linked guide across Purdue & BTAA stages
 ├── notebooks/      # Exploratory analysis & prototyping notebooks (local or Colab)
 ├── src/            # Reusable data loading, feature engineering, and modeling modules
+│   └── explore.py  # DuckDB / PyArrow schema, row count, and season profiler
+├── tests/          # Unit tests (pytest / unittest)
+├── pyproject.toml  # Python dependencies and project configuration (uv / pip)
 └── ruff.toml       # Python lint & formatting configuration
 ```
+
+## Quickstart
+
+1. Place the official NCAA Women's Basketball dataset files in `data/raw/` (gitignored).
+2. Install dependencies and run the dataset profiler or unit tests:
+   ```bash
+   uv sync --dev
+   uv run python src/explore.py
+   uv run pytest
+   ```
 
 ## Development Workflow
 
